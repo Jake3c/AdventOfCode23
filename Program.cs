@@ -1,18 +1,17 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.IO;
 
 namespace AdventCalendar
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string line;
             int lineCount = 0;
             int sum = 0;
-            int combinedValue = 0;
+            int combinedValue;
 
             StreamReader reader = new StreamReader("Docs/AdventCode1.txt");
 
@@ -24,10 +23,6 @@ namespace AdventCalendar
                 combinedValue = combineFirstAndLastNumber(charString);
                 sum += combinedValue;
                 line = reader.ReadLine();
-                if(lineCount == 999)
-                {
-                    var a = 0;
-                }
             }
 
             reader.Close();
@@ -95,7 +90,6 @@ namespace AdventCalendar
                     return key.Value;
                 }
             }
-
             return 0;
         }
     }
